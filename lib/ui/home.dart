@@ -10,7 +10,7 @@ import 'about.dart';
 import 'footer.dart';
 import 'header.dart';
 import 'icon.dart';
-import 'my_projects.dart';
+import 'school_courses.dart';
 import 'statistics.dart';
 import 'working_process.dart';
 
@@ -58,7 +58,7 @@ class _HomeState extends State<Home> {
               SliverAppBar(
                 key: _headerGlobalKey,
                 titleSpacing: 0,
-                toolbarHeight: 100,
+                toolbarHeight: 48,
                 backgroundColor: Colors.transparent,
                 flexibleSpace: Container(
                   decoration: BoxDecoration(
@@ -75,74 +75,157 @@ class _HomeState extends State<Home> {
                         colors: [
                           Colors.black,
                           Colors.black87,
-                          Colors.transparent
+                          Colors.transparent,
                         ],
                       ),
                     ),
                   ),
                 ),
-                title: Padding(
-                  padding: EdgeInsets.only(
-                    left: MediaQuery.of(context).size.width * .15,
-                  ),
-                ),
                 bottom: PreferredSize(
-                  preferredSize: Size.fromHeight(500),
+                  preferredSize: Size.fromHeight(512),
                   child: Header(),
                 ),
                 actions: [
-                  Row(
-                    children: [
-                      MaterialButton(
-                        onPressed: _scrollToAbout,
-                        highlightColor: Colors.white60,
-                        child: Text(
-                          'About Me',
-                          style: TextStyle(
-                              color: Colors.white, fontWeight: FontWeight.bold),
-                        ),
+                  Expanded(
+                    child: Container(
+                      margin: EdgeInsets.only(top: 8, left: 8, right: 8),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: [
+                          Flexible(
+                            fit: FlexFit.tight,
+                            child: Container(
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(8),
+                                border: Border.all(color: Colors.white),
+                              ),
+                              child: ElevatedButton(
+                                onPressed: _scrollToAbout,
+                                style: ElevatedButton.styleFrom(
+                                  backgroundColor: Colors.transparent,
+                                  foregroundColor: Colors.white,
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(8),
+                                  ),
+                                ),
+                                child: Text(
+                                  'About Us',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                          SizedBox(width: 8),
+                          Flexible(
+                            fit: FlexFit.tight,
+                            child: Container(
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(8),
+                                border: Border.all(color: Colors.white),
+                              ),
+                              child: ElevatedButton(
+                                onPressed: _scrollToStatistics,
+                                style: ElevatedButton.styleFrom(
+                                  backgroundColor: Colors.transparent,
+                                  foregroundColor: Colors.white,
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(8),
+                                  ),
+                                ),
+                                child: Text(
+                                  'Experience',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                          SizedBox(width: 8),
+                          Flexible(
+                            fit: FlexFit.tight,
+                            child: Container(
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(8),
+                                border: Border.all(color: Colors.white),
+                              ),
+                              child: ElevatedButton(
+                                onPressed: _scrollToWorkingProcess,
+                                style: ElevatedButton.styleFrom(
+                                  backgroundColor: Colors.transparent,
+                                  foregroundColor: Colors.white,
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(8),
+                                  ),
+                                ),
+                                child: Text(
+                                  'Process',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                          SizedBox(width: 8),
+                          Flexible(
+                            fit: FlexFit.tight,
+                            child: Container(
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(8),
+                                border: Border.all(color: Colors.white),
+                              ),
+                              child: ElevatedButton(
+                                onPressed: _scrollToRecentProjects,
+                                style: ElevatedButton.styleFrom(
+                                  backgroundColor: Colors.transparent,
+                                  foregroundColor: Colors.white,
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(8),
+                                  ),
+                                ),
+                                child: Text(
+                                  'Courses',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                          SizedBox(width: 8),
+                          Flexible(
+                            fit: FlexFit.tight,
+                            child: Container(
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(8),
+                                border: Border.all(color: Colors.white),
+                              ),
+                              child: ElevatedButton(
+                                onPressed: _scrollToContactUs,
+                                style: ElevatedButton.styleFrom(
+                                  backgroundColor: AppColors.primary,
+                                  foregroundColor: Colors.white,
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(8),
+                                  ),
+                                ),
+                                child: Text(
+                                  'Contact Us',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
-                      MaterialButton(
-                        onPressed: _scrollToStatistics,
-                        child: Text(
-                          'Experience',
-                          style: TextStyle(
-                              color: Colors.white, fontWeight: FontWeight.bold),
-                        ),
-                      ),
-                      MaterialButton(
-                        onPressed: _scrollToWorkingProcess,
-                        child: Text(
-                          'Process',
-                          style: TextStyle(
-                              color: Colors.white, fontWeight: FontWeight.bold),
-                        ),
-                      ),
-                      MaterialButton(
-                        onPressed: _scrollToRecentProjects,
-                        child: Text(
-                          'Projects',
-                          style: TextStyle(
-                              color: Colors.white, fontWeight: FontWeight.bold),
-                        ),
-                      ),
-                      const SizedBox(width: 20),
-                      ElevatedButton(
-                        onPressed: _scrollToContactUs,
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: AppColors.primary,
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 40, vertical: 15),
-                        ),
-                        child: Text(
-                          'Contact Me',
-                          style: TextStyle(
-                              color: Colors.white, fontWeight: FontWeight.bold),
-                        ),
-                      ),
-                    ],
+                    ),
                   ),
-                  SizedBox(width: MediaQuery.of(context).size.width * .15),
                 ],
               ),
               ..._slivers(),
@@ -162,7 +245,7 @@ class _HomeState extends State<Home> {
                     Navigator.pop(context);
                   },
                   title: Text(
-                    'About Me',
+                    'About Us',
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
                 ),
@@ -197,7 +280,6 @@ class _HomeState extends State<Home> {
                   ),
                 ),
                 Divider(),
-                const SizedBox(height: 20),
                 ListTile(
                   title: ElevatedButton(
                     onPressed: () {
@@ -207,10 +289,10 @@ class _HomeState extends State<Home> {
                     style: ElevatedButton.styleFrom(
                       backgroundColor: AppColors.primary,
                       padding: const EdgeInsets.symmetric(
-                          horizontal: 40, vertical: 15),
+                          horizontal: 15, vertical: 15),
                     ),
                     child: Text(
-                      'Contact Me',
+                      'Contact Us',
                       style: TextStyle(
                           color: Colors.white, fontWeight: FontWeight.bold),
                     ),
@@ -222,22 +304,33 @@ class _HomeState extends State<Home> {
                   children: [
                     InkWell(
                       onTap: () {
-                        launchUrlString(AppConstants.github,
+                        launchUrlString(AppConstants.whatsapp,
                             webOnlyWindowName: '_blank');
                       },
                       child: AppIcon(
-                        'icons/github.png',
+                        'icons/whatsapp.png',
                         color: AppColors.black,
                       ),
                     ),
                     const SizedBox(width: 20),
                     InkWell(
                       onTap: () {
-                        launchUrlString(AppConstants.linkedin,
+                        launchUrlString(AppConstants.telegram,
                             webOnlyWindowName: '_blank');
                       },
                       child: AppIcon(
-                        'icons/linkedin.png',
+                        'icons/telegram.png',
+                        color: AppColors.black,
+                      ),
+                    ),
+                    const SizedBox(width: 20),
+                    InkWell(
+                      onTap: () {
+                        launchUrlString(AppConstants.instagram,
+                            webOnlyWindowName: '_blank');
+                      },
+                      child: AppIcon(
+                        'icons/instagram.png',
                         color: AppColors.black,
                       ),
                     )
@@ -326,6 +419,7 @@ class _HomeState extends State<Home> {
           child: MyProjects(),
         ),
         SliverToBoxAdapter(
+          key: _contactUsGlobaleKey,
           child: Footer(),
         ),
       ];

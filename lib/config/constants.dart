@@ -1,12 +1,11 @@
 mixin AppConstants {
-  static final String mail = 'MHKalantarian@gmail.com';
+  static final String mail = 'N.M.Kalantarian@gmail.com';
 
-  static final String phone = '(+98) 912 866 7882\n(+98) 936 554 2971';
+  static final String phone = '(+98) 901 181-8017';
 
-  static final String github = 'https://github.com/MHKalantarian';
+  static final String instagram = 'https://www.instagram.com/movement_school_';
 
-  static final String linkedin = 'https://www.linkedin.com/in/MHKalantarian';
+  static final String telegram = 'https://t.me/nazmovement';
 
-  static final String cv =
-      'https://docs.google.com/document/d/18T0URd8qV8CT1tV4a10jEGsC0toGgVAkxaalL4RlujY/view';
+  static final String whatsapp = 'https://wa.me/989011818017';
 }

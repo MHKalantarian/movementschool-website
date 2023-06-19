@@ -3,7 +3,7 @@ import 'package:url_launcher/url_launcher_string.dart';
 
 import '../config/colors.dart';
 import '../config/styles.dart';
-import '../data/projects.dart';
+import '../data/courses.dart';
 import 'responsive_widget.dart';
 
 class MyProjects extends StatelessWidget {

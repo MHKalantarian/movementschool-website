@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher_string.dart';
 
 import '../config/colors.dart';
-import '../config/constants.dart';
 import '../config/styles.dart';
 import '../data/skills.dart';
 import 'responsive_widget.dart';
@@ -42,7 +40,7 @@ class About extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'ABOUT ME',
+                          'ABOUT US',
                           style: TextStyle(
                             color: AppColors.primary,
                             fontSize: 40,
@@ -56,18 +54,6 @@ class About extends StatelessWidget {
                                     color: Colors.black.withOpacity(.7),
                                     fontSize: 17,
                                   ),
-                        ),
-                        const SizedBox(height: 30),
-                        ElevatedButton(
-                          onPressed: _downloadCV,
-                          style: ElevatedButton.styleFrom(
-                            foregroundColor: Colors.white,
-                            backgroundColor: AppColors.primary,
-                            padding: const EdgeInsets.symmetric(
-                                horizontal: 30, vertical: 20),
-                            textStyle: TextStyle(color: Colors.white),
-                          ),
-                          child: Text('VIEW CV'),
                         ),
                       ],
                     ),
@@ -111,7 +97,7 @@ class About extends StatelessWidget {
               ),
               const SizedBox(height: 20),
               Text(
-                'ABOUT ME',
+                'ABOUT US',
                 style: TextStyle(
                   color: AppColors.primary,
                   fontSize: 20,
@@ -125,17 +111,6 @@ class About extends StatelessWidget {
                       fontSize: 13,
                     ),
                 textAlign: TextAlign.center,
-              ),
-              const SizedBox(height: 30),
-              ElevatedButton(
-                onPressed: _downloadCV,
-                style: ElevatedButton.styleFrom(
-                  foregroundColor: Colors.white,
-                  backgroundColor: AppColors.primary,
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
-                ),
-                child: Text('VIEW CV'),
               ),
               const SizedBox(height: 50),
               Text('MY SKILLS', style: AppStyles.title),
@@ -154,10 +129,6 @@ class About extends StatelessWidget {
           ),
         ),
       );
-
-  void _downloadCV() {
-    launchUrlString(AppConstants.cv, webOnlyWindowName: '_blank');
-  }
 
   Widget _buildSkill(Skill skill) => Chip(label: Text(skill.name!));
 }

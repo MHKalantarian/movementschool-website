@@ -38,7 +38,7 @@ class Footer extends StatelessWidget {
                           ),
                           const SizedBox(width: 7.5),
                           Text(
-                            'CONTACT ME',
+                            'CONTACT US',
                             style: TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.w700,
@@ -123,7 +123,7 @@ class Footer extends StatelessWidget {
                     ),
                     const SizedBox(width: 7.5),
                     Text(
-                      'CONTACT ME',
+                      'CONTACT US',
                       style: TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.w700,
@@ -194,16 +194,23 @@ class Footer extends StatelessWidget {
   List<Widget> _socialMedia() => [
         InkWell(
           onTap: () async {
-            launchUrlString(AppConstants.github, webOnlyWindowName: '_blank');
+            launchUrlString(AppConstants.whatsapp, webOnlyWindowName: '_blank');
           },
-          child: AppIcon('icons/github.png'),
+          child: AppIcon('icons/whatsapp.png'),
         ),
         const SizedBox(width: 20),
         InkWell(
           onTap: () {
-            launchUrlString(AppConstants.linkedin, webOnlyWindowName: '_blank');
+            launchUrlString(AppConstants.telegram, webOnlyWindowName: '_blank');
           },
-          child: AppIcon('icons/linkedin.png'),
+          child: AppIcon('icons/telegram.png'),
+        ),
+        const SizedBox(width: 20),
+        InkWell(
+          onTap: () {
+            launchUrlString(AppConstants.instagram, webOnlyWindowName: '_blank');
+          },
+          child: AppIcon('icons/instagram.png'),
         )
       ];
 }
