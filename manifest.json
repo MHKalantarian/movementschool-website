@@ -5,7 +5,7 @@
   "display": "standalone",
   "background_color": "#2196F3",
   "theme_color": "#2196F3",
-  "description": "A fun place for children to learn ",
+  "description": "A fun place for children to learn.",
   "orientation": "portrait-primary",
   "prefer_related_applications": false,
   "icons": [
